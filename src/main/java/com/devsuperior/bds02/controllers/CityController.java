@@ -22,8 +22,14 @@ public class CityController {
 	
 	@GetMapping
 	public ResponseEntity<List<CityDTO>> findAll(){
-		List<CityDTO> list = service.findAll();
-		return ResponseEntity.ok().body(list);
+		List<CityDTO> cities = service.findAll();
+		return ResponseEntity.ok().body(cities);
 	}	
 	
+	@DeleteMapping(value = "/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
+        service.delete(id);
+
+        return ResponseEntity.noContent().build();
+    }	
 }

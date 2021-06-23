@@ -2,8 +2,6 @@ package com.devsuperior.bds02.dto;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.devsuperior.bds02.entities.Event;
 
@@ -16,7 +14,8 @@ public class EventDTO implements Serializable {
 	private String url;
 	private Long cityId;
 	
-	private List<CityDTO> cities = new ArrayList<>();
+	public EventDTO() {
+	}
 	
 	public EventDTO(Long id, String name, LocalDate date, String url, Long cityId) {
 		this.id = id;
@@ -73,14 +72,5 @@ public class EventDTO implements Serializable {
 	public void setCityId(Long cityId) {
 		this.cityId = cityId;
 	}
-
-	public List<CityDTO> getCities() {
-		return cities;
-	}
-
-	public void setCities(List<CityDTO> cities) {
-		this.cities = cities;
-	}
-	
 	
 }
